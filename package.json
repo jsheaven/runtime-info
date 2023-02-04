@@ -1,6 +1,6 @@
 {
   "name": "runtime-info",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publishConfig": {
     "access": "public"
   },
@@ -24,7 +24,7 @@
   "scripts": {
     "test": "jest --verbose --coverage",
     "prebuild": "rm -rf ./dist",
-    "build": "esbuild ./src/index.ts --bundle --minify --outfile=./dist/index.js --format=cjs && esbuild ./src/index.ts --bundle --minify --outfile=./dist/index.mjs --format=esm",
+    "build": "esbuild ./src/index.ts --bundle --minify --outfile=./dist/index.js --format=cjs  --sourcemap  && esbuild ./src/index.ts --bundle --minify --outfile=./dist/index.mjs --format=esm --sourcemap && tsc ./src/index.ts --declaration --emitDeclarationOnly --declarationDir './dist'",
     "postbuild": "gzip-size ./dist/index.js --include-original && gzip-size ./dist/index.mjs --include-original"
   },
   "author": "Aron Homberg <info@aron-homberg.de>",
