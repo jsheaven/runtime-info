@@ -1,0 +1,53 @@
+{
+  "name": "runtime-info",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "description": "Isomorphic, super-fast, and nano-sized library to determine isServer, isBrowser, isWebWorker at runtime",
+  "keywords": [
+    "runtime",
+    "isomorphic",
+    "environment",
+    "javascript",
+    "js",
+    "isBrowser",
+    "isServer",
+    "isWebWorker",
+    "nano"
+  ],
+  "repository": {
+    "url": "git+https://github.com/kyr0/runtime-info.git",
+    "type": "git"
+  },
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "prebuild": "rm -rf ./dist",
+    "build": "esbuild ./src/index.ts --bundle --minify --outfile=./dist/index.js --format=cjs && esbuild ./src/index.ts --bundle --minify --outfile=./dist/index.mjs --format=esm",
+    "postbuild": "gzip-size ./dist/index.js --include-original && gzip-size ./dist/index.mjs --include-original"
+  },
+  "author": "Aron Homberg <info@aron-homberg.de>",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "jest": "^29.4.1",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5",
+    "@types/jest": "^29.4.0",
+    "esbuild": "^0.17.5",
+    "gzip-size-cli": "^5.1.0",
+    "jsdom": "^21.1.0",
+    "global-jsdom": "^8.7.0"
+  }
+}
