@@ -5,7 +5,7 @@
     "access": "public"
   },
   "license": "MIT",
-  "description": "Isomorphic, super-fast, and nano-sized library to determine isServer, isBrowser, isWebWorker at runtime",
+  "description": "Isomorphic, nano-sized library to check where your code is running: isServer(), isBrowser(), isWebWorker()",
   "keywords": [
     "runtime",
     "isomorphic",
