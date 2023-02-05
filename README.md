@@ -8,13 +8,13 @@ This is important for SSR/SSG, isomorphic runtime code checks: Should certain co
 Some code works only on server, some code works in browser, and some in browser, but not in WebWorkers.
 
 Instead of a weak `if (typeof window !== 'undefined') { ... }` etc. checks which are easy to mistaken
-you can use this safe, fast and nano sized library. Using it gives you more readble code and reliability.
+you can use this safe, fast and nano sized library. Using it gives you more readable code and reliability.
 
 <h2 align="center">Features</h2>
 
 - ✅ JavaScript runtime checks: `isBrowser()`, `isServer()`, `isWebWorker()`
 - ✅ Just `174 byte` nano sized (ESM, gizpped)
-- ✅ Tree-shakable, side-effect free, so maybe just `58 byte` for you
+- ✅ Tree-shakable, side-effect free, so maybe just `~58 byte` for you
 - ✅ Zero dependencies
 - ✅ First class TypeScript support
 - ✅ 100% Unit Test coverage
